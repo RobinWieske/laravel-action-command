@@ -2,7 +2,8 @@
 
 namespace RobinWieske\LaravelActionCommand;
 
-use RobinWieske\LaravelActionCommand\Console\LaravelActionCommand;
+use RobinWieske\LaravelActionCommand\Console\LaravelActionMakeActionCommand;
+use RobinWieske\LaravelActionCommand\Console\LaravelActionMakeModelCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,6 +18,7 @@ class LaravelActionCommandServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-action-command')
-            ->hasConsoleCommand(LaravelActionCommand::class);
+            ->hasConsoleCommand(LaravelActionMakeModelCommand::class)
+            ->hasConsoleCommand(LaravelActionMakeActionCommand::class);
     }
 }

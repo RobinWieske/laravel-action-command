@@ -5,6 +5,7 @@ namespace RobinWieske\LaravelActionCommand\Console;
 use Illuminate\Console\Concerns\CreatesMatchingTest;
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
+use Symfony\Component\Console\Input\InputArgument;
 
 class LaravelActionMakeActionCommand extends GeneratorCommand
 {
@@ -18,9 +19,11 @@ class LaravelActionMakeActionCommand extends GeneratorCommand
 
     protected $operation = null;
 
-    public function handle()
+    public function handle(): bool
     {
         parent::handle();
+
+        return true;
     }
 
     /**

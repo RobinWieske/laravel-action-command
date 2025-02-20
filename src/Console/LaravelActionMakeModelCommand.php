@@ -21,15 +21,11 @@ class LaravelActionMakeModelCommand extends Command
 
     public function handle()
     {
-        if (parent::handle() === false && ! $this->option('force')) {
-            return false;
-        }
+        parent::handle();
 
         if ($this->option('actions')) {
             $this->createActions();
         }
-
-        return true;
     }
 
     protected function createActions()

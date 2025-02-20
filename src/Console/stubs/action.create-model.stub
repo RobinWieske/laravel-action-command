@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use App\Models\{{ model }};
+
+class {{ class }}
+{
+    public function __invoke(array $data = []): {{ model }}
+    {
+        return {{ model }}::create(...$data);
+    }
+}

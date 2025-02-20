@@ -2,9 +2,9 @@
 
 namespace RobinWieske\LaravelActionCommand;
 
+use RobinWieske\LaravelActionCommand\Commands\LaravelActionCommandCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RobinWieske\LaravelActionCommand\Commands\LaravelActionCommandCommand;
 
 class LaravelActionCommandServiceProvider extends PackageServiceProvider
 {

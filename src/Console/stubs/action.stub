@@ -6,7 +6,12 @@ namespace {{ namespace }};
 
 class {{ class }}
 {
-    public function __invoke(array $data = [])
+    /**
+     * Handle the action.
+     *
+     * @param  array<string, mixed>  $data
+     */
+    public function __invoke(array $data = []): void
     {
         // ...
     }

@@ -5,11 +5,30 @@ declare(strict_types=1);
 namespace {{ namespace }};
 
 use App\Models\{{ model }};
+use RobinWieske\LaravelActionCommand\Traits\ValidatesModel;
 
 class {{ class }}
 {
-    public function __invoke({{ model }} $model, array $data = []): {{ model }}
+    use ValidatesModel;
+
+    /**
+     * The validation rules for the action.
+     *
+     * @var array<string, mixed>
+     */
+    public array $rules = [
+        // ...
+    ];
+
+    /**
+     * Handle the action.
+     *
+     * @param  App\Models\{{ model }}  $model
+     * @param  array<string, mixed>  $data
+     * @return App\Models\{{ model }}
+     */
+    public function __invoke({{ model }} $model, array $data = [], string $errorBag = 'update{{ model }}'): {{ model }}
     {
-        return tap($model)->update(...$data);
+        return tap($model)->update(...$this->isValid($data, $errorBag));
     }
 }

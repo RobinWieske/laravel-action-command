@@ -8,7 +8,7 @@ use App\Models\{{ model }};
 
 class {{ class }}
 {
-    public function __invoke({{ model }} $model, array $data = []): bool
+    public function __invoke({{ model }} $model): bool
     {
         return $model->delete();
     }

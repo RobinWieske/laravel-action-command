@@ -5,11 +5,29 @@ declare(strict_types=1);
 namespace {{ namespace }};
 
 use App\Models\{{ model }};
+use RobinWieske\LaravelActionCommand\Traits\ValidatesModel;
 
 class {{ class }}
 {
-    public function __invoke(array $data = []): {{ model }}
+    use ValidatesModel;
+
+    /**
+     * The validation rules for the action.
+     *
+     * @var array<string, mixed>
+     */
+    public array $rules = [
+        // ...
+    ];
+
+    /**
+     * Handle the action.
+     *
+     * @param  array<string, mixed>  $data
+     * @return App\Models\{{ model }}
+     */
+    public function __invoke(array $data = [], string $errorBag = 'create{{ model }}'): {{ model }}
     {
-        return {{ model }}::create(...$data);
+        return {{ model }}::create(...$this->isValid($data, $errorBag));
     }
 }

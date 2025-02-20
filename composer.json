@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "robinwieske/laravel-action-command",
+    "description": "This package provides a simple `make:action` command to generate invokable action classes",
     "keywords": [
-        ":vendor_name",
+        "Robin Wieske",
         "laravel",
-        ":package_slug"
+        "laravel-action-command"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/robinwieske/laravel-action-command",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Robin Wieske",
+            "email": "robin@w3ke.de",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "RobinWieske\\LaravelActionCommand\\": "src/",
+            "RobinWieske\\LaravelActionCommand\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "RobinWieske\\LaravelActionCommand\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "RobinWieske\\LaravelActionCommand\\LaravelActionCommandServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelActionCommand": "RobinWieske\\LaravelActionCommand\\Facades\\LaravelActionCommand"
             }
         }
     },

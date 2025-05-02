@@ -24,10 +24,10 @@ class {{ class }}
      * Handle the action.
      *
      * @param  array<string, mixed>  $data
-     * @return App\Models\{{ model }}
+     * @return {{ model }}
      */
     public function __invoke(array $data = [], string $errorBag = 'create{{ model }}'): {{ model }}
     {
-        return {{ model }}::create(...$this->isValid($data, $errorBag));
+        return {{ model }}::create([...$this->isValid($data, $errorBag)]);
     }
 }

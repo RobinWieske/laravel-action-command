@@ -23,12 +23,12 @@ class {{ class }}
     /**
      * Handle the action.
      *
-     * @param  App\Models\{{ model }}  $model
+     * @param  {{ model }}  $model
      * @param  array<string, mixed>  $data
-     * @return App\Models\{{ model }}
+     * @return {{ model }}
      */
     public function __invoke({{ model }} $model, array $data = [], string $errorBag = 'update{{ model }}'): {{ model }}
     {
-        return tap($model)->update(...$this->isValid($data, $errorBag));
+        return tap($model)->update([...$this->isValid($data, $errorBag)]);
     }
 }
